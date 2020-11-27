@@ -13,6 +13,3 @@ class Engineer extends Employee {
     getRole() {return "Engineer"}
 }
 
-let joe = new Engineer('Joe', 32, 'joe@joe.com', 'git@hub.com')
-
-console.log(joe)
