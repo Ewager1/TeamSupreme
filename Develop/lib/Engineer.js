@@ -2,7 +2,7 @@
 
 //import Employee Class
 
-const Employee = require('./Employee');
+const Employee = require("./Employee");
 
 //create Engineer subclass and exports
 class Engineer extends Employee {
@@ -17,7 +17,5 @@ class Engineer extends Employee {
     return "Engineer";
   }
 }
-
-
 
 module.exports = Engineer;
