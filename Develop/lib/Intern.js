@@ -1,6 +1,6 @@
 // TODO: Write code to define and export the Intern class.  HINT: This class should inherit from Employee.
 //import Employee Class
-import {Employee} from "./Employee.js";
+const Employee = require('./Employee');
 
 //create Intern subclass
 class Intern extends Employee {
@@ -9,11 +9,11 @@ class Intern extends Employee {
     this.school = school;
   }
   getSchool() {
-    return school;
+    return this.school;
   }
   getRole() {
     return "Intern";
   }
 }
 
-export default Intern 
+module.exports = Intern;

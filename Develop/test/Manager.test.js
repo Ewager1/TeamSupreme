@@ -1,5 +1,5 @@
 require("jest");
-import Manager from "../lib/Manager.js";
+let Manager = require("../lib/Manager.js");
 
 test("Can set office number via constructor argument", () => {
   const testValue = 100;

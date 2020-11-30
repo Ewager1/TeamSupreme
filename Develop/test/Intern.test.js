@@ -1,5 +1,5 @@
 require('jest')
-import Intern from '../Intern.js'
+let Intern = require('../lib/Intern.js')
 
 test("Can set school via constructor", () => {
   const testValue = "UCLA";
