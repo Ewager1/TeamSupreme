@@ -1,4 +1,5 @@
-import Employee from "../lib/Employee";
+require('jest')
+import {Employee} from "../lib/Employee.js";
 
 test("Can instantiate Employee instance", () => {
   const e = new Employee();

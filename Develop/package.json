@@ -1,6 +1,5 @@
 {
   "type": "module",
-  
   "name": "unit10hw",
   "version": "1.0.0",
   "description": "OOP and testing for week 10 homework",
@@ -26,6 +25,7 @@
     "inquirer": "^6.5.2"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.12.7",
     "jest": "^24.9.0"
   }
 }

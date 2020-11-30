@@ -1,6 +1,6 @@
 // TODO: Write code to define and export the Intern class.  HINT: This class should inherit from Employee.
 //import Employee Class
-import Employee from "./Employee.js";
+import {Employee} from "./Employee.js";
 
 //create Intern subclass
 class Intern extends Employee {
@@ -16,4 +16,4 @@ class Intern extends Employee {
   }
 }
 
-
+export default Intern 

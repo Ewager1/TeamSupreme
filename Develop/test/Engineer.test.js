@@ -1,4 +1,5 @@
-const Engineer = require("../lib/Engineer");
+require('jest')
+import Engineer from "../Engineer.js"; 
 
 test("Can set GitHUb account via constructor", () => {
   const testValue = "GitHubUser";
