@@ -72,6 +72,10 @@ let getEngineerInfo = {
   message: "Enter Engineer's Office Number",
 };
 
+inquirer.prompt(getManagerInfo).then((managerInfo) => {
+  console.log(JSON.stringify(managerInfo));
+});
+
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
