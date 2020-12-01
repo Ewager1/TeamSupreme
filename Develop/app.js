@@ -1,7 +1,7 @@
-const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
-const inquirer = require("inquirer");
+const Manager = require("./lib/Manager.js");
+const Engineer = require("./lib/Engineer.js");
+const Intern = require("./lib/Intern.js");
+const inquirer = require("inquirer.js");
 const path = require("path");
 const fs = require("fs");
 
@@ -16,61 +16,66 @@ const render = require("./lib/htmlRenderer");
 //inquierer:
 
 //manager inquierer questions
-let getManagerInfo = {
-  type: "input",
-  name: "managerName",
-  message: "Enter Manger's Full Name",
-
-  type: "input",
-  name: "managerId",
-  message: "Enter Manager's ID",
-
-  type: "input",
-  name: "mangerEmail",
-  message: "Enter Manager's contact Email",
-
-  type: "input",
-  name: "manager_name",
-  message: "Enter Manager's Office Number",
-};
+let getManagerInfo = [
+  { type: "input", name: "managerName", message: "Enter Manger's Full Name" },
+  { type: "input", name: "managerId", message: "Enter Manager's ID" },
+  {
+    type: "input",
+    name: "mangerEmail",
+    message: "Enter Manager's contact Email",
+  },
+  {
+    type: "input",
+    name: "manager_name",
+    message: "Enter Manager's Office Number",
+  },
+];
 
 //intern inquirer questions
-let getInternInfo = {
-  type: "input",
-  name: "internName",
-  message: "Enter Intern's Full Name",
+let getInternInfo = [
+  {
+    type: "input",
+    name: "internName",
+    message: "Enter Intern's Full Name",
+  },
 
-  type: "input",
-  name: "internId",
-  message: "Enter Intern's ID",
+  { type: "input", name: "internId", message: "Enter Intern's ID" },
 
-  type: "input",
-  name: "internEmail",
-  message: "Enter Intern's contact Email",
+  {
+    type: "input",
+    name: "internEmail",
+    message: "Enter Intern's contact Email",
+  },
 
-  type: "input",
-  name: "internSchool",
-  message: "Enter Intern's Office Number",
-};
+  {
+    type: "input",
+    name: "internSchool",
+    message: "Enter Intern's Office Number",
+  },
+];
 
 //engineer inquierer questions
-let getEngineerInfo = {
-  type: "input",
-  name: "engineerName",
-  message: "Enter Engineer's Full Name",
+let getEngineerInfo = [
+  {
+    type: "input",
+    name: "engineerName",
+    message: "Enter Engineer's Full Name",
+  },
 
-  type: "input",
-  name: "engineerID",
-  message: "Enter Engineer's ID",
+  { type: "input", name: "engineerID", message: "Enter Engineer's ID" },
 
-  type: "input",
-  name: "engineerEmail",
-  message: "Enter Engineer's contact Email",
+  {
+    type: "input",
+    name: "engineerEmail",
+    message: "Enter Engineer's contact Email",
+  },
 
-  type: "input",
-  name: "engineerGithub",
-  message: "Enter Engineer's Office Number",
-};
+  {
+    type: "input",
+    name: "engineerGithub",
+    message: "Enter Engineer's Office Number",
+  },
+];
 
 inquirer.prompt(getManagerInfo).then((managerInfo) => {
   console.log(JSON.stringify(managerInfo));
