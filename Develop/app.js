@@ -30,7 +30,7 @@ var questions = [
   },
   {
     type: "input",
-    name: "Office Number",
+    name: "officeNumber",
     message: "Manager, what is your office number?",
     when: (answers) => answers.position === "Manager",
   },
@@ -41,21 +41,68 @@ var questions = [
   },
   {
     type: "input",
-    name: "GitHub URL",
+    name: "gitHubURL",
     message: "Engineer, what is your GitHub URL?",
     when: (answers) => answers.position === "Engineer",
   },
   {
     type: "input",
-    name: "SchoolName",
+    name: "schoolName",
     message: "Intern, what is your School Name?",
     when: (answers) => answers.position === "Intern",
   },
+  {
+    type: "list",
+    name: "addPosition",
+    message: "Add another position?",
+    choices: ["yes", "no"],
+  },
 ];
 
-inquirer.prompt(questions).then((answers) => {
-  console.log(JSON.stringify(answers));
-});
+//placeholder array for employee objects
+employeeArray = [];
+
+function runQuestions() {
+  inquirer.prompt(questions).then((answers) => {
+    switch (answers.position) {
+      case "Manager":
+        manager = new Manager(
+          answers.fullName,
+          answers.companyID,
+          answers.email,
+          answers.officeNumber
+        );
+        employeeArray.push(manager);
+        break;
+
+      case "Engineer":
+        engineer = new Engineer(
+          answers.fullName,
+          answers.companyID,
+          answers.email,
+          answers.gitHubURL
+        );
+        employeeArray.push(engineer);
+        break;
+
+      case "Intern":
+        intern = new Intern(
+          answers.fullName,
+          answers.companyID,
+          answers.email,
+          answers.schoolName
+        );
+        employeeArray.push(intern);
+        break;
+    }
+
+    if (answers.addPosition === "yes") {
+      runQuestions();
+    }
+  });
+}
+
+runQuestions();
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
