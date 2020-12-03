@@ -2,7 +2,9 @@
 
 A coding team generator that renders a nice html page with team members and their basic information.
 
--![Website Demo Picture](./Develop/assets/demoPic.png)
+- [Video Walkthrough](https://youtu.be/5MnuKWk6Dfw)
+
+- ![Website Demo Picture](./Develop/assets/demoPic.png)
 
 ## Goal
 
