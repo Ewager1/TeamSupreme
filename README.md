@@ -30,4 +30,4 @@ with quick access to information.
 
 -[My Github ](https://github.com/Ewager1/TeamSupreme/settings)
 
--[My Portfolio](https://github.com/Ewager1/Portfolio)
+-[My Portfolio](https://ewager1.github.io/Portfolio/)
