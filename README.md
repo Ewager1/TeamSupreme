@@ -2,9 +2,7 @@
 
 A coding team generator that renders a nice html page with team members and their basic information.
 
--[Project Link ](https://ewager1.github.io/TeamSupreme/)
-
-g![Website Demo Picture](./Develop/assets/demoPic.png)
+-![Website Demo Picture](./Develop/assets/demoPic.png)
 
 ## Goal
 
@@ -31,4 +29,4 @@ with quick access to information.
 
 -[My Github ](https://github.com/Ewager1)
 
--[My Portfolio](https://ewager1.github.io/Portfolio/)
+-[My Portfolio](https://ewager1.github.io/gitPortfolio/)
