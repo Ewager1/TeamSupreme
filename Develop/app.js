@@ -22,28 +22,83 @@ var questions = [
     type: "input",
     name: "fullName",
     message: "What is your full name?",
+    validate: function (value) {
+      var pass = value.match(
+        // Checks for 2 names. Regex grabbed from https://stackoverflow.com/questions/2385701/regular-expression-for-first-and-last-name
+       /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/
+      );
+      if (pass) {
+        return true;
+      }
+
+      return "Please enter a first and last name";
+    },
   },
   {
     type: "input",
     name: "email",
     message: "What is your email?",
+    validate: function (value) {
+      var pass = value.match(
+        //checks for valid email. grabbed regex from https://regexr.com/3e48o
+        /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
+      );
+      if (pass) {
+        return true;
+      }
+
+      return "Please enter a valid email address";
+    },
   },
   {
     type: "input",
     name: "officeNumber",
     message: "Manager, what is your office number?",
     when: (answers) => answers.position === "Manager",
+    validate: function (value) {
+      var pass = value.match(
+        //regular expression that checks entire statement is only numbers
+        /^\d+$/
+      );
+      if (pass) {
+        return true;
+      }
+
+      return "Office number only accepts numbers";
+    },
   },
   {
     type: "input",
     name: "companyID",
     message: "What is your company ID?",
+    validate: function (value) {
+      var pass = value.match(
+        //regular expression that checks entire statement is only numbers
+        /^\d+$/
+      );
+      if (pass) {
+        return true;
+      }
+
+      return "Company ID only accepts Numbers";
+    },
   },
   {
     type: "input",
     name: "gitHubURL",
     message: "Engineer, what is your GitHub URL?",
     when: (answers) => answers.position === "Engineer",
+    validate: function (value) {
+      var pass = value.match(
+        //validates url. grabbed from https://regexr.com/39nr7
+        /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig
+      );
+      if (pass) {
+        return true;
+      }
+
+      return "Company ID only accepts Numbers";
+    },
   },
   {
     type: "input",
@@ -109,6 +164,6 @@ runQuestions();
 function makeTemplate() {
   fs.writeFile(outputPath, render(employeeArray), function (err) {
     if (err) throw err;
-    console.log("Error");
+    ;
   });
 }
