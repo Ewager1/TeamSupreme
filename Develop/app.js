@@ -25,7 +25,7 @@ var questions = [
     validate: function (value) {
       var pass = value.match(
         // Checks for 2 names. Regex grabbed from https://stackoverflow.com/questions/2385701/regular-expression-for-first-and-last-name
-       /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/
+        /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/
       );
       if (pass) {
         return true;
@@ -91,13 +91,13 @@ var questions = [
     validate: function (value) {
       var pass = value.match(
         //validates url. grabbed from https://regexr.com/39nr7
-        /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig
+        /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/gi
       );
       if (pass) {
         return true;
       }
 
-      return "Company ID only accepts Numbers";
+      return "Please enter a valid url with @ symbol";
     },
   },
   {
@@ -150,7 +150,6 @@ function runQuestions() {
         );
         employeeArray.push(intern);
     }
-
     if (answers.addPosition === "yes") {
       runQuestions();
     } else makeTemplate();
@@ -164,6 +163,5 @@ runQuestions();
 function makeTemplate() {
   fs.writeFile(outputPath, render(employeeArray), function (err) {
     if (err) throw err;
-    ;
   });
 }

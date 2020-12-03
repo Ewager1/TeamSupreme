@@ -1,0 +1,28 @@
+body {
+  background-color: #eee2dc;
+  color: #793b08;
+}
+
+.team-heading {
+  background-color: #edc7b7;
+}
+
+.card {
+    background-color:#edc7b7;
+}
+
+.card-body li{
+    background-color:#eee2dc ;
+}
+
+a {
+    color: #793b08;
+    text-decoration: none;
+    
+  }
+
+  a:hover {
+   color: #793b08;
+   text-decoration:none;
+   cursor: text;
+  }
