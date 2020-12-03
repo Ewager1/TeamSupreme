@@ -28,5 +28,6 @@ with quick access to information.
 
 ## My Info
 
-[My Github ](https://github.com/Ewager1/TeamSupreme/settings)
-[My Portfolio](https://github.com/Ewager1/Portfolio)
+-[My Github ](https://github.com/Ewager1/TeamSupreme/settings)
+
+-[My Portfolio](https://github.com/Ewager1/Portfolio)
